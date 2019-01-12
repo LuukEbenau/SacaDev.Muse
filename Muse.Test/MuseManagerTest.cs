@@ -17,7 +17,6 @@ namespace Muse.Test
 		public void TearDown() {
 			Manager?.Dispose();
 		}
-
 		#region connecting tests
 		[Test]
 		public void Connect_DoubleAlias_Test() {
