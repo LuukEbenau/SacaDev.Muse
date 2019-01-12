@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28407.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Muse", "Muse\Muse.csproj", "{DC9CC950-FB1B-4837-B909-4A0388ADC95C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Muse", "Muse\Muse.csproj", "{DC9CC950-FB1B-4837-B909-4A0388ADC95C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Muse.Test", "Muse.Test\Muse.Test.csproj", "{4500684F-AF08-4E73-B6DB-EC83DDA2CE8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Muse.Test", "Muse.Test\Muse.Test.csproj", "{4500684F-AF08-4E73-B6DB-EC83DDA2CE8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Muse.Cli", "Muse.Cli\Muse.Cli.csproj", "{96D2C053-32DF-4C86-826F-124DF310B39B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OscParser", "OscParser\OscParser.csproj", "{7B89A430-015A-4504-8B8D-6595FD03249D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{4500684F-AF08-4E73-B6DB-EC83DDA2CE8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4500684F-AF08-4E73-B6DB-EC83DDA2CE8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4500684F-AF08-4E73-B6DB-EC83DDA2CE8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96D2C053-32DF-4C86-826F-124DF310B39B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96D2C053-32DF-4C86-826F-124DF310B39B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96D2C053-32DF-4C86-826F-124DF310B39B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96D2C053-32DF-4C86-826F-124DF310B39B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B89A430-015A-4504-8B8D-6595FD03249D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B89A430-015A-4504-8B8D-6595FD03249D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B89A430-015A-4504-8B8D-6595FD03249D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B89A430-015A-4504-8B8D-6595FD03249D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

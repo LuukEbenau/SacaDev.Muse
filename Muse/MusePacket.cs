@@ -9,10 +9,10 @@ namespace Muse
 	{
 		public string Name { get; }
 		public SignalAddress Address { get; }
-		public ICollection<decimal> Values { get; set; }
-		public MusePacket(string museName, SignalAddress address, IEnumerable<decimal> values)
+		public ICollection<double> Values { get; set; }
+		public MusePacket(string name, SignalAddress address, IEnumerable<double> values)
 		{
-			this.Name = Name;
+			this.Name = name;
 			this.Address = address;
 			this.Values = values.ToList();
 		}
