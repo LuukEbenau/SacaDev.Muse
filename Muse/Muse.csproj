@@ -7,6 +7,7 @@
   <ItemGroup>
     <Reference Include="SharpOSC">
       <HintPath>bin\SharpOSC.dll</HintPath>
+      <Private>true</Private>
     </Reference>
   </ItemGroup>
 
