@@ -8,9 +8,9 @@
     <RepositoryUrl>https://github.com/LuukEbenau</RepositoryUrl>
     <RepositoryType>Public</RepositoryType>
     <Copyright>MIT</Copyright>
-    <PackageLicenseUrl>https://github.com/LuukEbenau/Muse/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageIconUrl>https://images.indiegogo.com/file_attachments/531318/files/20140424121937-muse_interaXon_logo.jpg</PackageIconUrl>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <PackageReleaseNotes />
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>SacaDev.Muse</PackageId>

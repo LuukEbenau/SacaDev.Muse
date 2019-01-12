@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Muse", "Muse\Muse.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Muse.Test", "Muse.Test\Muse.Test.csproj", "{4500684F-AF08-4E73-B6DB-EC83DDA2CE8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Muse.Cli", "Muse.Cli\Muse.Cli.csproj", "{96D2C053-32DF-4C86-826F-124DF310B39B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Muse.Cli", "Muse.Cli\Muse.Cli.csproj", "{96D2C053-32DF-4C86-826F-124DF310B39B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OscParser", "OscParser\OscParser.csproj", "{7B89A430-015A-4504-8B8D-6595FD03249D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OscParser", "OscParser\OscParser.csproj", "{7B89A430-015A-4504-8B8D-6595FD03249D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
