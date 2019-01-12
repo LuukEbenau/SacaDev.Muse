@@ -2,6 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>This package is designed to be a easy to use library to communicate with the Muse Headband (see  https://choosemuse.com/).</Description>
+    <PackageTags>Muse, ChooseMuse, EEG, headband, interaXon Muse</PackageTags>
+    <PackageProjectUrl>https://github.com/LuukEbenau</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/LuukEbenau</RepositoryUrl>
+    <RepositoryType>Public</RepositoryType>
+    <Copyright>MIT</Copyright>
+    <PackageLicenseUrl>https://github.com/LuukEbenau/Muse/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageIconUrl>https://images.indiegogo.com/file_attachments/531318/files/20140424121937-muse_interaXon_logo.jpg</PackageIconUrl>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

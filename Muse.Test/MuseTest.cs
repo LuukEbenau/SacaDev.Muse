@@ -17,7 +17,6 @@ namespace Muse.Test
 		public void TearDown() {
 			Muse?.Dispose();
 		}
-
 		#region tests to verify subscription altering methods are working properly
 		[Test]
 		public void Connect_SubscriptionsSetCorrectly_Test() {
