@@ -1,3 +1,5 @@
+[![Build Status](https://sacazioto.visualstudio.com/Muse/_apis/build/status/Muse-CI?branchName=master)](https://sacazioto.visualstudio.com/Muse/_build/latest?definitionId=6?branchName=master)
+
 # Muse
 This project is made with the goal to give (C#) .NET developers an easy way to receive and manage the data retrieved from the Muse.
 The main goals&features of the project include:
