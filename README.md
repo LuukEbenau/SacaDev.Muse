@@ -23,5 +23,5 @@ You can also give feature requests using the issue system.
 
 ## Current backlog:
 *  Create tests to cover the receiving of data from the muse
-*  Add package to the Nuget packet manager
+*  Insure Thread-safety of all code
 *  improve the OSC Parser project. atm. this codebase is an stripped down version from the OSCsharp project (see https://github.com/valyard/OSCsharp). However, this project is written in an very early .NET Framework version, and is written in an c++ ish way. So there is room for some refactoring to say the least.
