@@ -10,10 +10,12 @@
     <Copyright>MIT</Copyright>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageIconUrl>https://images.indiegogo.com/file_attachments/531318/files/20140424121937-muse_interaXon_logo.jpg</PackageIconUrl>
-    <Version>1.0.2</Version>
-    <PackageReleaseNotes />
+    <Version>1.0.3</Version>
+    <PackageReleaseNotes></PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>SacaDev.Muse</PackageId>
+    <Authors>Sacation</Authors>
+    <Company>SacaDev</Company>
   </PropertyGroup>
 
   <ItemGroup>
