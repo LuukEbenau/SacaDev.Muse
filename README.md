@@ -24,7 +24,7 @@ You can also give feature requests using the issue system.
 ## Getting started
 To start using the project, you only need to be familiar with a single class: the MuseManager.
 Basic usage to start listening to a muse can be done as following:
-`			
+```	
 void manager_MusePacketReceived(object sender, MusePacket e)
 {
   Console.WriteLine($"{e.Name} send an packet with address '{e.Address}', containing:");
@@ -36,7 +36,7 @@ void manager_MusePacketReceived(object sender, MusePacket e)
 var manager = new MuseManager();
 manager.Connect("jantje", 7000);
 manager.MusePacketReceived += manager_MusePacketReceived;
-`
+```
 First you have to create a new instance of the MuseManager class, no magic is happening here.
 After that you can use the Connect(alias,port) command to start listening to a muse at the given muse. The alias is purely given to let you distinguish between multiple connected muses.
 after that you can subscribe to the 'MusePacketReceived' event to start getting notified whenever a packet comes in.
@@ -45,7 +45,7 @@ If you are only interested in some specific types of packets, you can subscribe 
 The MuseManager has Three handy methods for managing subscriptions.
 They all have to option to specify the alias of an specific muse, or no alias (apply to all muses).
 The methods are as following:
-`
+```
 //sets the subscriptions to only the given adresses
 manager.SetSubscriptions(SignalAddress.Beta_Rel | SignalAddress.MuseStatus | SignalAddress.Blink);
 
@@ -54,11 +54,11 @@ manager.AddSubscriptions("jantje", SignalAddress.Beta_Session_Score | SignalAddr
 
 //remove subscription to Beta_Rel for all muses
 manager.RemoveSubscriptions(SignalAddress.Beta_Rel);
-`
+```
 
 ### Closing connections
 Closing connections to connected muses is really simple. You have three options of doing so:
-`
+```
 //close connection with the muse by alias
 manager.CloseConnection(alias);
 //close connection to all connected muses
@@ -69,7 +69,7 @@ manager.Dispose();
 using(var manager = new MuseManager()){
     //code...
 }
-`
+```
 
 ## Current backlog:
 *  Create tests to cover the receiving of data from the muse
