@@ -61,11 +61,13 @@ Closing connections to connected muses is really simple. You have three options 
 ```
 //close connection with the muse by alias
 manager.CloseConnection(alias);
+
 //close connection to all connected muses
 manager.CloseConnections();
+
 //using the IDisposable interface, like so:
 manager.Dispose();
-//or like this:
+//or:
 using(var manager = new MuseManager()){
     //code...
 }
