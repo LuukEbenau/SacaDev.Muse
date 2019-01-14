@@ -7,16 +7,28 @@ namespace Muse
 {
 	public class Muse : IDisposable
 	{
+		/// <summary>
+		/// Alias given to this muse
+		/// </summary>
 		public string Alias { get; }
+		/// <summary>
+		/// Actual name of the muse, determined by the muse itself(more strictly speaking, muse Direct)
+		/// </summary>
 		public string Name { get; private set; }
 		public int Port { get; }
 
 		public bool IsConnected { get; private set; }
 		public bool IsTouchingForehead { get; private set; }
 
+		/// <summary>
+		/// all subscribed signal flags
+		/// </summary>
 		public SignalAddress Subscriptions { get; private set; }
 
 		private MuseListener _listener;
+		/// <summary>
+		/// gets triggered when a packet is received from the muse
+		/// </summary>
 		public event EventHandler<MusePacket> PacketReceived;
 
 		public Muse(string alias, int port) {
@@ -69,40 +81,6 @@ namespace Muse
 		}
 
 		public void Connect() => Connect(SignalAddress.All);
-
-		//private void OnPacketReceived(OscPacket packet)
-		//{
-		//	try
-		//	{
-		//		var message = (OscMessage)packet;
-
-		//		//automatically detect name from the first packet received
-		//		if (Name == null){
-		//			Name = message.Address.Substring(0, message.Address.IndexOf('/'));
-		//		}
-
-		//		var musePacket = ParsePacket(message);
-		//		if (musePacket.Address == SignalAddress.Unknown)
-		//		{
-		//			Console.WriteLine($"unknown packet with address '{message.Address}', skipping it...");
-		//			return;
-		//		}
-		//		if (musePacket.Address == SignalAddress.TouchingForehead) {
-		//			var firstVal = musePacket.Values.FirstOrDefault();
-
-		//			IsTouchingForehead = firstVal > 0;
-		//		}
-		//		//only send data if subscribed to the given packet type
-		//		if (Subscriptions.HasFlag(musePacket.Address))
-		//		{
-		//			PacketReceived?.Invoke(this, musePacket);
-		//		}
-		//	}
-		//	catch (Exception)
-		//	{
-		//		Console.WriteLine("Corrupt packet received");
-		//	}
-		//}
 
 		public void Disconnect() {
 			_listener?.Dispose();

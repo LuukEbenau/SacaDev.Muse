@@ -12,7 +12,6 @@ namespace Muse.Cli
 			var manager = new MuseManager();
 			manager.MusePacketReceived += Manager_MusePacketReceived;
 			manager.Connect("jantje", 7000);
-			
 
 			//var listener = new MuseListener(7000);
 			//listener.PacketReceived += Listener_PacketReceived;

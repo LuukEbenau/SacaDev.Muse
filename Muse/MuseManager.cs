@@ -54,8 +54,8 @@ namespace Muse
 		/// <summary>
 		/// Connect to a muse with the given name and port
 		/// </summary>
-		/// <param name="port"></param>
-		/// <param name="name"></param>
+		/// <param name="port">portnumber to listen to</param>
+		/// <param name="alias">the alias you want to give this muse</param>
 		/// <exception cref="MuseException">When something goes whrong with connection</exception>
 		/// <exception cref="MusePortAlreadyInUseException">When the given port is already in use</exception>
 		/// <exception cref="MuseAliasAlreadyInUseException">When the manager is already connected with an muse with the same alias</exception>
@@ -74,6 +74,8 @@ namespace Muse
 				=> MusePacketReceived?.Invoke(sender, e);
 		}
 
+
+
 		/// <summary>
 		/// Closes the connection to the muse with the given alias, and removes it
 		/// </summary>
@@ -90,7 +92,7 @@ namespace Muse
 		/// Closes the connection to the muse with the given name, and removes it
 		/// </summary>
 		/// <param name="muse">the muse to close the connection from</param>
-		public void CloseConnection(Muse muse)
+		private void CloseConnection(Muse muse)
 		{
 			if (!Muses.Contains(muse))
 				return;

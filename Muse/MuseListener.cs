@@ -24,9 +24,12 @@ namespace Muse
 		public void StartListening() {
 			StopListening();
 			this.Client = new UdpClient(Port);
-			var endpoint = new IPEndPoint(IPAddress.Any, Port);
+			
 			Task.Run(() => {
-				try{
+				var endpoint = new IPEndPoint(IPAddress.Any, Port);
+				try
+				{
+					//TODO: this is an initial version, i feel like this can be done more elegant? (atleast async, not thread blocking like now)
 					while (true)
 					{
 						try

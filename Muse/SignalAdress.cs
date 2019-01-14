@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Muse
 {
+	/// <summary>
+	/// All available message adresses
+	/// </summary>
 	[Flags]
 	public enum SignalAddress
 	{
