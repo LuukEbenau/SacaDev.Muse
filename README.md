@@ -74,6 +74,4 @@ using(var manager = new MuseManager()){
 ```
 
 ## Current backlog:
-*  Create tests to cover the receiving of data from the muse
-*  Insure Thread-safety of all code
-*  improve the OSC Parser project. atm. this codebase is an stripped down version from the OSCsharp project (see https://github.com/valyard/OSCsharp). However, this project is written in an very early .NET Framework version, and is written in an c++ ish way. So there is room for some refactoring to say the least.
+See Issues: https://github.com/LuukEbenau/Muse/issues
