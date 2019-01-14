@@ -76,5 +76,4 @@ using(var manager = new MuseManager()){
 ## Current backlog:
 *  Create tests to cover the receiving of data from the muse
 *  I expect there is a lot of room for improvement for showing the status of muses. atm. this gets just send to the consumer as packets, but this can be partially handled by the Muse/MuseManager to do some logic(like events only when status is different from previous, enz.
-*  Insure Thread-safety of all code
 *  improve the OSC Parser project. atm. this codebase is an stripped down version from the OSCsharp project (see https://github.com/valyard/OSCsharp). However, this project is written in an very early .NET Framework version, and is written in an c++ ish way. So there is room for some refactoring to say the least.
