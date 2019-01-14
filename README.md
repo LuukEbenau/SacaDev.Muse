@@ -74,4 +74,4 @@ using(var manager = new MuseManager()){
 ```
 
 ## Current backlog:
-See Issues https://github.com/LuukEbenau/Muse/issues
+See Issues: https://github.com/LuukEbenau/Muse/issues
