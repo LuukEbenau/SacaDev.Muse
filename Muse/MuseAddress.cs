@@ -1,4 +1,4 @@
-﻿namespace Muse
+﻿namespace SacaDev.Muse
 {
 	public static class MuseAddress
 	{

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Muse
+namespace SacaDev.Muse
 {
 	public class MuseAliasAlreadyInUseException:MuseException
 	{

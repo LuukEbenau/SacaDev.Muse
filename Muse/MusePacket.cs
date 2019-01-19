@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Muse
+namespace SacaDev.Muse
 {
 	/// <summary>
 	/// Packet format received by the muse

@@ -5,7 +5,7 @@ using System.Net.Sockets;
 using System.Text;
 using OscParser;
 
-namespace Muse.Test
+namespace SacaDev.Muse.Test
 {
 	[TestFixture]
 	public class MuseListenerTest

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Muse.Test.Mock
+namespace SacaDev.Muse.Test.Mock
 {
 	public class MusePackageMocks
 	{

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Muse
+namespace SacaDev.Muse
 {
 	/// <summary>
 	/// All available message adresses

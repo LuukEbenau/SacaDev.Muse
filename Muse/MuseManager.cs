@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 
-namespace Muse
+namespace SacaDev.Muse
 {
 	/// <summary>
 	/// Manager of all muses

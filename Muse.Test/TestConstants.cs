@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Muse.Test
+namespace SacaDev.Muse.Test
 {
 	public static class TestConstants
 	{

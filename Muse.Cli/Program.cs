@@ -1,7 +1,7 @@
 ﻿using System;
-using Muse;
+using SacaDev.Muse;
 
-namespace Muse.Cli
+namespace SacaDev.Muse.Cli
 {
 	class Program
 	{

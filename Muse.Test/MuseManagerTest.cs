@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Muse.Test
+namespace SacaDev.Muse.Test
 {
 	[TestFixture]
 	public class MuseManagerTest

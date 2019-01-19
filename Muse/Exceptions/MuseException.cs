@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Muse
+namespace SacaDev.Muse
 {
 	/// <summary>
 	/// Baseclass of all custom exceptions thrown by the muse

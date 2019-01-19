@@ -8,7 +8,7 @@ using System.Threading;
 using OscParser;
 using System.Linq;
 
-namespace Muse
+namespace SacaDev.Muse
 {
 	public class MuseListener:IDisposable
 	{
