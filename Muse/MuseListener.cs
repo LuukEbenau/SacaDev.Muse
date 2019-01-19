@@ -10,7 +10,7 @@ using System.Linq;
 
 namespace SacaDev.Muse
 {
-	public class MuseListener:IDisposable
+	public class MuseListener : IDisposable
 	{
 		private UdpClient Client { get; set; }
 		private int Port { get; }
