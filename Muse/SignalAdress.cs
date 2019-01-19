@@ -51,6 +51,6 @@ namespace Muse
 		SessionScores = Beta_Session_Score | Delta_Session_Score | Gamma_Session_Score | Theta_Session_Score | Alpha_Session_Score,
 		MuseStatus = TouchingForehead | Horsehoe | IsGood,
 
-		All = SensorData | RawData | SessionScores | MuseStatus | Drlref | Eeg | NotchFilteredEeg | JawClench | Blink
+		All = SensorData | RawData | SessionScores | MuseStatus | Drlref | Eeg | NotchFilteredEeg | JawClench | Blink,
 	}
 }

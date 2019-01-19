@@ -25,7 +25,7 @@ namespace Muse
 			StopListening();
 			this.Client = new UdpClient(Port);
 			
-			Task.Run(() => {
+			Task.Run(async () => {
 				var endpoint = new IPEndPoint(IPAddress.Any, Port);
 				try
 				{
@@ -34,7 +34,9 @@ namespace Muse
 					{
 						try
 						{
-							byte[] bytes = Client.Receive(ref endpoint);
+							var result = await Client.ReceiveAsync();
+							var bytes = result.Buffer;
+
 							var message = OscPacket.GetPacket(bytes) as OscMessage;
 
 							var musePacket = ParsePacket(message);
@@ -75,101 +77,7 @@ namespace Muse
 			StartListening();
 		}
 
-		private SignalAddress ParseSignalAdressFromMessageAdress(string address)
-		{
-			var firstSlashIndex = address.IndexOf('/');
-			var absAdressPart = address.Substring(firstSlashIndex);
-
-			SignalAddress parsedAddress;
-			switch (absAdressPart)
-			{
-				case "/notch_filtered_eeg":
-					parsedAddress = SignalAddress.NotchFilteredEeg;
-					break;
-				case "/eeg":
-					parsedAddress = SignalAddress.Eeg;
-					break;
-				case "/elements/touching_forehead":
-					parsedAddress = SignalAddress.TouchingForehead;
-					break;
-				case "/elements/delta_relative":
-					parsedAddress = SignalAddress.Delta_Rel;
-					break;
-				case "/gyro":
-					parsedAddress = SignalAddress.Gyro;//filter out
-					break;
-				case "/acc":
-					parsedAddress = SignalAddress.Acceleration;
-					break;
-				case "/elements/blink":
-					parsedAddress = SignalAddress.Blink;
-					break;
-				case "/elements/jaw_clench":
-					parsedAddress = SignalAddress.JawClench;
-					break;
-				case "/elements/alpha_absolute":
-					parsedAddress = SignalAddress.Alpha_Abs;
-					break;
-				case "/elements/beta_absolute":
-					parsedAddress = SignalAddress.Beta_Abs;
-					break;
-				case "/elements/theta_absolute":
-					parsedAddress = SignalAddress.Theta_Abs;
-					break;
-				case "/elements/delta_absolute":
-					parsedAddress = SignalAddress.Delta_Abs;
-					break;
-				case "/elements/gamma_absolute":
-					parsedAddress = SignalAddress.Gamma_Abs;
-					break;
-				case "/elements/alpha_relative":
-					parsedAddress = SignalAddress.Alpha_Rel;
-					break;
-				case "/elements/beta_relative":
-					parsedAddress = SignalAddress.Beta_Rel;
-					break;
-				case "/elements/theta_relative":
-					parsedAddress = SignalAddress.Theta_Rel;
-					break;
-				case "/elements/gamma_relative":
-					parsedAddress = SignalAddress.Gamma_Rel;
-					break;
-				case "/elements/alpha_session_score":
-					parsedAddress = SignalAddress.Alpha_Session_Score;
-					break;
-				case "/elements/beta_session_score":
-					parsedAddress = SignalAddress.Beta_Session_Score;
-					break;
-				case "/elements/delta_session_score":
-					parsedAddress = SignalAddress.Delta_Session_Score;
-					break;
-				case "/elements/theta_session_score":
-					parsedAddress = SignalAddress.Theta_Session_Score;
-					break;
-				case "/elements/gamma_session_score":
-					parsedAddress = SignalAddress.Gamma_Session_Score;
-					break;
-				case "/elements/is_good":
-					parsedAddress = SignalAddress.IsGood;
-					break;
-				case "/elements/horseshoe":
-					parsedAddress = SignalAddress.Horsehoe;
-					break;
-				case "/drlref":
-					parsedAddress = SignalAddress.Drlref;
-					break;
-				case "/batt":
-					parsedAddress = SignalAddress.Battery;
-					break;
-				default:
-					parsedAddress = SignalAddress.Unknown;
-					break;
-			};
-
-			return parsedAddress;
-		}
-
-		private MusePacket ParsePacket(OscMessage message)
+		public MusePacket ParsePacket(OscMessage message)
 		{
 			var signalAddress = ParseSignalAdressFromMessageAdress(message.Address);
 			string name = message.Address.Substring(0, message.Address.IndexOf('/'));
@@ -180,5 +88,101 @@ namespace Muse
 		{
 			Client?.Dispose();
 		}
+
+		#region private methods
+		private SignalAddress ParseSignalAdressFromMessageAdress(string address)
+		{
+			var firstSlashIndex = address.IndexOf('/');
+			var absAdressPart = address.Substring(firstSlashIndex);
+
+			SignalAddress parsedAddress;
+			switch (absAdressPart)
+			{
+				case MuseAddress.NOTCHFILTEREDEEG:
+					parsedAddress = SignalAddress.NotchFilteredEeg;
+					break;
+				case MuseAddress.EEG:
+					parsedAddress = SignalAddress.Eeg;
+					break;
+				case MuseAddress.TOUCHINGFOREHEAD:
+					parsedAddress = SignalAddress.TouchingForehead;
+					break;
+				case MuseAddress.DELTARELATIVE:
+					parsedAddress = SignalAddress.Delta_Rel;
+					break;
+				case MuseAddress.GYRO:
+					parsedAddress = SignalAddress.Gyro;
+					break;
+				case MuseAddress.ACCELERATION:
+					parsedAddress = SignalAddress.Acceleration;
+					break;
+				case MuseAddress.BLINK:
+					parsedAddress = SignalAddress.Blink;
+					break;
+				case MuseAddress.JAWCLENCH:
+					parsedAddress = SignalAddress.JawClench;
+					break;
+				case MuseAddress.ALPHAABSOLUTE:
+					parsedAddress = SignalAddress.Alpha_Abs;
+					break;
+				case MuseAddress.BETAABSOLUTE:
+					parsedAddress = SignalAddress.Beta_Abs;
+					break;
+				case MuseAddress.THETAABSOLUTE:
+					parsedAddress = SignalAddress.Theta_Abs;
+					break;
+				case MuseAddress.DELTAABSOLUTE:
+					parsedAddress = SignalAddress.Delta_Abs;
+					break;
+				case MuseAddress.GAMMAABSOLUTE:
+					parsedAddress = SignalAddress.Gamma_Abs;
+					break;
+				case MuseAddress.ALPHARELATIVE:
+					parsedAddress = SignalAddress.Alpha_Rel;
+					break;
+				case MuseAddress.BETARELATIVE:
+					parsedAddress = SignalAddress.Beta_Rel;
+					break;
+				case MuseAddress.THETARELATIVE:
+					parsedAddress = SignalAddress.Theta_Rel;
+					break;
+				case MuseAddress.GAMMARELATIVE:
+					parsedAddress = SignalAddress.Gamma_Rel;
+					break;
+				case MuseAddress.ALHPASESSIONSCORE:
+					parsedAddress = SignalAddress.Alpha_Session_Score;
+					break;
+				case MuseAddress.BETASESSIONSCORE:
+					parsedAddress = SignalAddress.Beta_Session_Score;
+					break;
+				case MuseAddress.DELTASESSIONSCORE:
+					parsedAddress = SignalAddress.Delta_Session_Score;
+					break;
+				case MuseAddress.THETASESSIONSCORE:
+					parsedAddress = SignalAddress.Theta_Session_Score;
+					break;
+				case MuseAddress.GAMMASESSIONSCORE:
+					parsedAddress = SignalAddress.Gamma_Session_Score;
+					break;
+				case MuseAddress.ISGOOD:
+					parsedAddress = SignalAddress.IsGood;
+					break;
+				case MuseAddress.HORSEHOE:
+					parsedAddress = SignalAddress.Horsehoe;
+					break;
+				case MuseAddress.DRLREF:
+					parsedAddress = SignalAddress.Drlref;
+					break;
+				case MuseAddress.BATTERY:
+					parsedAddress = SignalAddress.Battery;
+					break;
+				default:
+					parsedAddress = SignalAddress.Unknown;
+					break;
+			};
+
+			return parsedAddress;
+		}
+		#endregion
 	}
 }
