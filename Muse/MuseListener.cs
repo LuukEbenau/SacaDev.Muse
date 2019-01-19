@@ -17,7 +17,8 @@ namespace Muse
 		public event EventHandler<MusePacket> PacketReceived;
 
 		public void StopListening() {
-			this.Client?.Dispose();//should make client cancel the Receive operation,//CHECKME: is this the right way to go?
+			//this.Client?.Close();
+			this.Client?.Dispose();//should make client cancel the Receive operation,//CHECKME: is this the right way to go? it's surely hacky but hey, the client doen't really provide an much better alternative way :)
 			this.Client = null;
 		}
 
@@ -30,7 +31,7 @@ namespace Muse
 				try
 				{
 					//TODO: this is an initial version, i feel like this can be done more elegant? (atleast async, not thread blocking like now)
-					while (true)
+					while(true)
 					{
 						try
 						{
@@ -48,14 +49,20 @@ namespace Muse
 
 							PacketReceived?.Invoke(this, musePacket);
 						}
-						catch (ObjectDisposedException) {
+						catch (ObjectDisposedException)
+						{
 							Console.WriteLine("disposed early");
+							throw;
 						}
 						catch (Exception ex)
 						{
 							Console.WriteLine($"Corrupt packet received: '{ex.Message}'");
 						}
 					}
+				}
+				catch (ObjectDisposedException) {
+					//is fine, atm this is the escape condition when the listener needs to stop listening to the port. far from elegant but it works i suppose :)
+					Console.WriteLine("exited");
 				}
 				catch (SocketException e)
 				{
