@@ -88,7 +88,7 @@ namespace SacaDev.Muse
 		{
 			var signalAddress = ParseSignalAdressFromMessageAdress(message.Address);
 			string name = message.Address.Substring(0, message.Address.IndexOf('/'));
-			return new MusePacket(name, signalAddress, message.Arguments.Select(a => (a as IConvertible).ToDouble(null)));
+			return new MusePacket(name, signalAddress, message.Arguments.Select(a => (a as IConvertible).ToDouble(null)).Where(d=>!double.IsNaN(d)));
 		}
 
 		public void Dispose()

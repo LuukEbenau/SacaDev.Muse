@@ -11,11 +11,18 @@ namespace SacaDev.Muse.Cli
 
 			var manager = new MuseManager();
 			manager.MusePacketReceived += Manager_MusePacketReceived;
-			manager.Connect("jantje", 7000);
+			var muse = manager.Connect("jantje", 7000);
+
+			muse.AllElectrodesConnectedChanged += Muse_AllElectrodesConnectedChanged;
 
 			//var listener = new MuseListener(7000);
 			//listener.PacketReceived += Listener_PacketReceived;
 			Console.Read();
+		}
+
+		private static void Muse_AllElectrodesConnectedChanged(object sender, bool e)
+		{
+			
 		}
 
 		private static void Manager_MusePacketReceived(object sender, MusePacket e)

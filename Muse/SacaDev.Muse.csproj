@@ -8,7 +8,7 @@
     <RepositoryUrl>https://github.com/LuukEbenau</RepositoryUrl>
     <RepositoryType>Public</RepositoryType>
     <Copyright>MIT</Copyright>
-    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageLicenseUrl>https://github.com/LuukEbenau/SacaDev.Muse/blob/master/LICENSE</PackageLicenseUrl>
     <PackageIconUrl>https://images.indiegogo.com/file_attachments/531318/files/20140424121937-muse_interaXon_logo.jpg</PackageIconUrl>
     <Version>1.0.4</Version>
     <PackageReleaseNotes></PackageReleaseNotes>
@@ -16,7 +16,12 @@
     <PackageId>SacaDev.Muse</PackageId>
     <Authors>Sacation</Authors>
     <Company>SacaDev</Company>
+    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="MuseListener.cs~RF40dcf04.TMP" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\OscParser\OscParser.csproj" />
