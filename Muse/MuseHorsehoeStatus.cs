@@ -20,6 +20,7 @@ namespace SacaDev.Muse
 		public void Update(double[] statusses) {
 			if (statusses.Length != Statusses.Length) {
 				Console.WriteLine($"invalid amount of statusses received: only {statusses.Length} instead of {Statusses.Length}, corrupt data?");
+				return;
 			}
 
 			for (int i = 0; i < statusses.Length; i++) {
