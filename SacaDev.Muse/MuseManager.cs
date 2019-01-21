@@ -59,7 +59,7 @@ namespace SacaDev.Muse
 		/// <exception cref="MuseException">When something goes whrong with connection</exception>
 		/// <exception cref="MusePortAlreadyInUseException">When the given port is already in use</exception>
 		/// <exception cref="MuseAliasAlreadyInUseException">When the manager is already connected with an muse with the same alias</exception>
-		public Muse Connect(string alias, int port)
+		public Muse Connect(string alias, int port, SignalAddress subscriptions)
 		{
 			if (Muses.Any(m => m.Alias == alias))
 				throw new MuseAliasAlreadyInUseException();
@@ -67,13 +67,15 @@ namespace SacaDev.Muse
 				throw new MusePortAlreadyInUseException();
 
 			var muse = new Muse(alias, port);
-			muse.Connect();
+			muse.Connect(subscriptions);
 			Muses.Add(muse);
 
 			muse.PacketReceived += (object sender, MusePacket e)
 				=> MusePacketReceived?.Invoke(sender, e);
+
 			return muse;
 		}
+		public Muse Connect(string alias, int port) => Connect(alias, port, SignalAddress.All);
 
 		/// <summary>
 		/// Closes the connection to the muse with the given alias, and removes it
