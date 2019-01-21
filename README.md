@@ -6,7 +6,7 @@ The main goals&features of the project include:
 *  Intuitive usage
 *  Supports multiple Muses
 *  option to subscribe on certain signals, can differ between each Muse.
-*  Follows c# 7.3 coding styles
+*  Follows c# 7.1 coding styles
 *  Good test coverage
 *  Targeting .NET Standard 2
 *  Extensibility
