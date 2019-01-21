@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Muse\SacaDev.Muse.csproj" />
+    <ProjectReference Include="..\SacaDev.Muse\SacaDev.Muse.csproj" />
   </ItemGroup>
 
 </Project>
