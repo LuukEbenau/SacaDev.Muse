@@ -50,7 +50,7 @@ The methods are as following:
 manager.SetSubscriptions(SignalAddress.Beta_Rel | SignalAddress.MuseStatus | SignalAddress.Blink);
 
 //add a subscription to beta score and gyro to only the muse with alias "jantje".
-manager.AddSubscriptions("jantje", SignalAddress.Beta_Session_Score | SignalAddress.Gyro);
+manager.AddSubscriptions("alias", SignalAddress.Beta_Session_Score | SignalAddress.Gyro);
 
 //remove subscription to Beta_Rel for all muses
 manager.RemoveSubscriptions(SignalAddress.Beta_Rel);
@@ -60,7 +60,7 @@ manager.RemoveSubscriptions(SignalAddress.Beta_Rel);
 Closing connections to connected muses is really simple. You have three options of doing so:
 ```
 //close connection with the muse by alias
-manager.CloseConnection(alias);
+manager.CloseConnection("alias");
 
 //close connection to all connected muses
 manager.CloseConnections();
