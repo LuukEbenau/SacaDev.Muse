@@ -16,9 +16,9 @@ The main goals&features of the project include:
 The packet can been found in the Nuget Packet manager at https://www.nuget.org/packages/SacaDev.Muse/.
 
 I would like to encourage everyone to contribute to this project if you see room for improvements!
-This is an early version of the project, and there's surely still a lot room for improvement. I also can't promise i will always enough time to pick up all issues myself, so help yourself where possible!
+This is an early version of the project, and there's surely still a lot room for improvement. I also have limited time, so I will probably not have enough time to pick up all issues myself, so help yourself where possible!
 
-And if you encounter weird/unintended behaviour, please leave an issue.
+If you encounter weird/unintended behaviour, please leave an issue.
 You can also give feature requests using the issue system.
 
 ## Getting started
