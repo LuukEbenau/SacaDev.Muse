@@ -1,7 +1,7 @@
 [![Build Status](https://sacazioto.visualstudio.com/Muse/_apis/build/status/Muse-CI?branchName=master)](https://sacazioto.visualstudio.com/Muse/_build/latest?definitionId=6?branchName=master)
 
 # SacaDev.Muse
-This project is made with the goal to give (C#) .NET developers an easy way to receive and manage the data retrieved from the Muse.
+This project is made with the goal to give (C#) .NET developers an easy way to receive and manage the data retrieved from the ChooseMuse Muse EEG Headband.
 The main goals&features of the project include:
 *  Intuitive usage
 *  Supports multiple Muses
